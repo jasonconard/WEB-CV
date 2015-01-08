@@ -17,11 +17,39 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
-    .when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
+    .when('/album', {
+      templateUrl: 'views/album.html',
+      controller: 'AlbumCtrl'
+    })
+    .when('/diplomas', {
+      templateUrl: 'views/diplomas.html',
+      controller: 'DiplomasCtrl'
+    })
+    .when('/hobbys', {
+      templateUrl: 'views/hobbys.html',
+      controller: 'HobbysCtrl'
+    })
+    .when('/profile', {
+      templateUrl: 'views/profile.html',
+      controller: 'ProfileCtrl'
+    })
+    .when('/projects', {
+      templateUrl: 'views/projects.html',
+      controller: 'ProjectsCtrl'
+    })
+    .when('/skills', {
+      templateUrl: 'views/skills.html',
+      controller: 'SkillsCtrl'
+    })
+    .when('/work', {
+      templateUrl: 'views/work-exp.html',
+      controller: 'WorkCtrl'
     })
     .otherwise({
       redirectTo: '/'
     });
+}]);
+
+app.run(['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
+
 }]);
