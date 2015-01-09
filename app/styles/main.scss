@@ -4,13 +4,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 // endbower
 
-@mixin box-shadow ($what) {
+@mixin box-shadow ($what...) {
   -webkit-box-shadow: $what;
   -moz-box-shadow:    $what;
   box-shadow:         $what;
 }
 
-@mixin transition($what: all 200ms linear) {
+@mixin transition($what: all 200ms ease-out) {
   -webkit-transition: $what;
   -moz-transition: $what;
   -ms-transition: $what;
@@ -21,20 +21,21 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 .header {
   position: relative;
+  z-index: 4;
 
   height: 150px;
   background-color: darkgray;
 
-  @include box-shadow(0px 2px 2px black);
+  @include box-shadow(0px 1px 10px black);
 
-  background: rgba(127,96,41,1);
-  background: -moz-linear-gradient(left, rgba(127,96,41,1) 0%, rgba(88,56,25,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(127,96,41,1)), color-stop(100%, rgba(88,56,25,1)));
-  background: -webkit-linear-gradient(left, rgba(127,96,41,1) 0%, rgba(88,56,25,1) 100%);
-  background: -o-linear-gradient(left, rgba(127,96,41,1) 0%, rgba(88,56,25,1) 100%);
-  background: -ms-linear-gradient(left, rgba(127,96,41,1) 0%, rgba(88,56,25,1) 100%);
-  background: linear-gradient(to right, rgba(127,96,41,1) 0%, rgba(88,56,25,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f6029', endColorstr='#583819', GradientType=1 );
+  background: rgb(182,175,164); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(182,175,164,1) 0%, rgba(221,215,204,1) 36%, rgba(184,174,166,1) 64%, rgba(174,162,154,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(182,175,164,1)), color-stop(36%,rgba(221,215,204,1)), color-stop(64%,rgba(184,174,166,1)), color-stop(100%,rgba(174,162,154,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  rgba(182,175,164,1) 0%,rgba(221,215,204,1) 36%,rgba(184,174,166,1) 64%,rgba(174,162,154,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  rgba(182,175,164,1) 0%,rgba(221,215,204,1) 36%,rgba(184,174,166,1) 64%,rgba(174,162,154,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  rgba(182,175,164,1) 0%,rgba(221,215,204,1) 36%,rgba(184,174,166,1) 64%,rgba(174,162,154,1) 100%); /* IE10+ */
+  background: linear-gradient(135deg,  rgba(182,175,164,1) 0%,rgba(221,215,204,1) 36%,rgba(184,174,166,1) 64%,rgba(174,162,154,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6afa4', endColorstr='#aea29a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
   .header-photo {
     position: relative;
@@ -95,10 +96,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     float: left;
     margin: 20px 10px;
     font-size: 2em;
-    color: #ffffff;
-    text-shadow: 1px 1px 1px black;
+    color: #231a00;
+    text-shadow: 2px 1px 0px rgba(255,255,255,0.8);
 
     .header-social {
+
+      color: #ffffff;
+      text-shadow: none;
       .header-social-button {
         float: left;
 
@@ -142,8 +146,69 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
       }
     }
   }
+
 }
 
+.header-navigator {
+  position: relative;
+  margin-top : 0px;
+  padding: 0;
+  z-index: 3;
+
+  @include transition();
+
+  &.closed-panel {
+    margin-top : -100px;
+  }
+
+  .header-canvas{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+
+    canvas {
+      position: relative;
+      top : 0px;
+      width: 100%;
+      height: 100px;
+      opacity: 1;
+      @include transition();
+
+      &.closed-panel {
+        top: -100px;
+        opacity: 0;
+      }
+    }
+  }
+
+  .header-switch{
+    position: absolute;
+
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background-color: yellowgreen;
+    border-bottom: 2px solid #769d26;
+
+    text-align: center;
+
+    @include box-shadow(0px 1px 10px black);
+
+    &:hover {
+      background-color: #afe838;
+    }
+  }
+}
+
+.main-container {
+  position: relative;
+  z-index: 2;
+  min-height: 50px;
+  background-color: #ffeace;
+
+  @include box-shadow(inset 0px 0px 20px #83776c, 0px 0px 20px 5px black);
+}
 
 body {
   background-image: url('../images/bruit.png');
