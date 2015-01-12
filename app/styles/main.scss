@@ -96,7 +96,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     float: left;
     margin: 20px 10px;
     font-size: 2em;
-    color: #231a00;
+    color: #2F2919;
     text-shadow: 2px 1px 0px rgba(255,255,255,0.8);
 
     .header-social {
@@ -142,6 +142,64 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
           &:hover {
             background-color: #be0006;
           }
+        }
+      }
+    }
+  }
+  
+  .header-menu {
+    position: relative;
+    float: right;
+    margin: 20px 10px;
+
+    .header-menu-item {
+      float: left;
+      width: 100px;
+      height: 100px;
+      font-size: 14px;
+      margin: 0px 6px;
+      color: #ffffff;
+      background-color: cadetblue;
+      border-bottom: 2px solid #3c6c6e;
+      transform: scale(1);
+
+      border-radius: 0px;
+
+      @include transition();
+
+      text-align: center;
+
+
+      i {
+        position: absolute;
+        width: 100%;
+        font-size: 4em;
+        top: 15px;
+        left: 0;
+
+        @include transition();
+      }
+
+      div {
+        position: absolute;
+        width: 100%;
+        font-size: 0.8em;
+        bottom: 3px;
+
+        overflow: hidden;
+        white-space : nowrap;
+        @include transition();
+      }
+
+      &:hover {
+        border-radius: 50%;
+
+        div {
+          font-size: 0px;
+        }
+
+        i {
+          top: 20px;
         }
       }
     }
