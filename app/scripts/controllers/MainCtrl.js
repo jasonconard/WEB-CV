@@ -29,7 +29,7 @@ var MainCtrl = function($rootScope, $scope, $timeout) {
       text : 'label.menu-skills'
     },{
       icon : 'gamepad',
-      text : 'label.menu-hobbys'
+      text : 'label.menu-hobbies'
     },{
       icon : 'camera-retro',
       text : 'label.menu-album'

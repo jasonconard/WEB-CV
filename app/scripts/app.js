@@ -1,5 +1,17 @@
 'use strict';
 
+var i18n = angular.module('i18n');
+
+i18n.config(['i18nServiceProvider', function(i18nServiceProvider) {
+  //Set Locales for service
+  i18nServiceProvider.setLocales({
+    'default': '/i18n/resources-locale_en.json',
+    'en': '/i18n/resources-locale_en.json',
+    'zh': '/i18n/resources-locale_zh.json',
+    'fr': '/i18n/resources-locale_fr.json'
+  }, true);
+}]);
+
 /**
  * @ngdoc overview
  * @name webcvApp
@@ -9,7 +21,7 @@
  * Main module of the application.
  */
 
-var app = angular.module('webcvApp', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch']);
+var app = angular.module('webcvApp', ['ngAnimate','ngCookies','ngResource','ngRoute','ngSanitize','ngTouch','i18n']);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
@@ -50,6 +62,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     });
 }]);
 
-app.run(['$rootScope', '$http', '$window', function($rootScope, $http, $window) {
+app.run(['$rootScope', '$http', '$window', 'i18nService', function($rootScope, $http, $window, i18nService) {
+  i18nService.selectLanguage('en');
 
 }]);

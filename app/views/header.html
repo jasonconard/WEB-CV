@@ -18,10 +18,9 @@
   <div class="header-menu">
     <div class="header-menu-item clickable" ng-repeat="item in menu">
       <i class="fa fa-{{item.icon}}"></i>
-      <div>{{item.text}}</div>
+      <div>{{item.text | i18n}}</div>
     </div>
   </div>
-
 </div>
 
 <div class="header-navigator container" ng-class="{'closed-panel' : !switchCanvas}">
