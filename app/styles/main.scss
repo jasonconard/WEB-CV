@@ -40,6 +40,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   .header-photo {
     position: relative;
     float: left;
+    z-index: 2;
     margin: 20px;
     width: 100px;
     height: 100px;
@@ -89,28 +90,49 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
         opacity: 1;
       }
     }
+  }
 
-    .languages {
-      position: absolute;
-      width: 100%;
-      left: 0px;
-      top : 100%;
-      .lang {
-        width: calc(33.33% - 2px);
-        margin: 1px;
-        float: left;
-        text-align: center;
-        color: #ffffff;
-        &.lang-en {
-          background-color: blue;
+  .languages {
+    position: absolute;
+    top : 120px;
+    left: 35px;
+    width: 100px;
+    z-index: 1;
+
+    .lang {
+
+      width: calc(33.33% - 2px);
+      margin: 1px;
+      float: left;
+      text-align: center;
+      color: #ffffff;
+      background-color: darkgray;
+      &.lang-en {
+        border-bottom: 2px solid #3c6c6e;
+        &:hover {
+          background-color: #6badaf;
         }
-        &.lang-fr {
-          background-color: blue;
+        &.current{
+          background-color: cadetblue;
         }
-        &.lang-zh {
-          background-color: red;
+      }
+      &.lang-fr {
+        border-bottom: 2px solid #01196e;
+        &:hover {
+          background-color: #2359be;
         }
-        
+        &.current{
+          background-color: #1f4ea0;
+        }
+      }
+      &.lang-zh {
+        border-bottom: 2px solid #620004;
+        &:hover {
+          background-color: #be0006;
+        }
+        &.current{
+          background-color: #a10006;
+        }
       }
     }
   }
@@ -174,7 +196,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   .header-menu {
     position: relative;
     float: right;
-    margin: 20px 10px;
+    height: 120px;
+    margin: 20px 10px 0px 10px;
 
     .header-menu-item {
       float: left;
@@ -299,4 +322,67 @@ body {
 
 .clickable:hover{
   cursor: pointer;
+}
+
+//Under 1200px of width
+@media (max-width: 1200px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        width: 70px;
+        height: 70px;
+        margin: 0px 6px;
+        i {
+          font-size: 2.5em;
+          top: 7px;
+        }
+        div {
+          font-size: 0.6em;
+          bottom: 4px;
+          white-space: normal;
+        }
+        &:hover {
+          i {
+            top: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    .header-menu {
+      width : 300px;
+      .header-menu-item {
+        width: 50px;
+        height: 50px;
+        margin: 0px 6px 6px 0px;
+        i {
+          font-size: 1.5em;
+          top: 2px;
+        }
+        div {
+          font-size: 0.5em;
+          bottom: 1px;
+          white-space: normal;
+        }
+        &:hover {
+          i {
+            top: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 700px) {
+  .header {
+    .header-menu {
+      width : 240px;
+    }
+  }
 }

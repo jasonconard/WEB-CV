@@ -11,7 +11,11 @@
 var MainCtrl = function($rootScope, $scope, $timeout, i18nService) {
   $scope.switchCanvas = true;
 
-  $scope.selectLanguage = i18nService.selectLanguage;
+  $scope.currentLanguage = i18nService.i18n.language;
+  $scope.selectLanguage = function(lang){
+    i18nService.selectLanguage(lang);
+    $scope.currentLanguage = lang;
+  };
 
   $scope.menu = [
     {

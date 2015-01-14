@@ -5,12 +5,14 @@
       <i class="fa fa-save"></i>
       <div>Curriculum Vitae</div>
     </div>
-    <div class="languages">
-      <div class="lang lang-en clickable" ng-click="selectLanguage('en')">En</div>
-      <div class="lang lang-fr clickable" ng-click="selectLanguage('fr')">Fr</div>
-      <div class="lang lang-zh clickable" ng-click="selectLanguage('zh')">中文</div>
-    </div>
   </div>
+
+  <div class="languages">
+    <div class="lang lang-en clickable" ng-click="selectLanguage('en')" ng-class="{'current':currentLanguage=='en'}">En</div>
+    <div class="lang lang-fr clickable" ng-click="selectLanguage('fr')" ng-class="{'current':currentLanguage=='fr'}">Fr</div>
+    <div class="lang lang-zh clickable" ng-click="selectLanguage('zh')" ng-class="{'current':currentLanguage=='zh'}">中文</div>
+  </div>
+
   <div class="header-name">Jason Conard
     <div class="header-social">
       <div class="header-social-button linkedin clickable"><i class="fa fa-linkedin"></i></div>
