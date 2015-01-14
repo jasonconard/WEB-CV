@@ -26,8 +26,8 @@ var app = angular.module('webcvApp', ['ngAnimate','ngCookies','ngResource','ngRo
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/profile.html',
+      controller: 'ProfileCtrl'
     })
     .when('/album', {
       templateUrl: 'views/album.html',
@@ -37,9 +37,9 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'views/diplomas.html',
       controller: 'DiplomasCtrl'
     })
-    .when('/hobbys', {
-      templateUrl: 'views/hobbys.html',
-      controller: 'HobbysCtrl'
+    .when('/hobbies', {
+      templateUrl: 'views/hobbies.html',
+      controller: 'HobbiesCtrl'
     })
     .when('/profile', {
       templateUrl: 'views/profile.html',

@@ -89,6 +89,30 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
         opacity: 1;
       }
     }
+
+    .languages {
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      top : 100%;
+      .lang {
+        width: calc(33.33% - 2px);
+        margin: 1px;
+        float: left;
+        text-align: center;
+        color: #ffffff;
+        &.lang-en {
+          background-color: blue;
+        }
+        &.lang-fr {
+          background-color: blue;
+        }
+        &.lang-zh {
+          background-color: red;
+        }
+        
+      }
+    }
   }
 
   .header-name {
@@ -264,6 +288,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   z-index: 2;
   min-height: 50px;
   background-color: #ffeace;
+  padding: 30px 20px;
 
   @include box-shadow(inset 0px 0px 20px #83776c, 0px 0px 20px 5px black);
 }

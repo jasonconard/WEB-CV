@@ -1,3 +1,9 @@
 {
-  "label.menu-hobbies": "Test"
+  "label.menu-profile": "介绍",
+  "label.menu-projects": "计划",
+  "label.menu-skills": "技能",
+  "label.menu-hobbies": "兴趣",
+  "label.menu-album": "画廊",
+  "label.menu-professional": "工作经验",
+  "label.menu-diplomas": "学位"
 }

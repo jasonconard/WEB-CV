@@ -8,31 +8,40 @@
  * Controller of the webcvApp
  */
 
-var MainCtrl = function($rootScope, $scope, $timeout) {
+var MainCtrl = function($rootScope, $scope, $timeout, i18nService) {
   $scope.switchCanvas = true;
+
+  $scope.selectLanguage = i18nService.selectLanguage;
 
   $scope.menu = [
     {
       icon : 'user',
-      text : 'label.menu-profile'
+      text : 'label.menu-profile',
+      link : '/profile'
     },{
       icon : 'coffee',
-      text : 'label.menu-professional'
+      text : 'label.menu-professional',
+      link : '/work'
     },{
       icon : 'graduation-cap',
-      text : 'label.menu-diplomas'
+      text : 'label.menu-diplomas',
+      link : '/diplomas'
     },{
       icon : 'gears',
-      text : 'label.menu-projects'
+      text : 'label.menu-projects',
+      link : '/projects'
     },{
       icon : 'wrench',
-      text : 'label.menu-skills'
+      text : 'label.menu-skills',
+      link : '/skills'
     },{
       icon : 'gamepad',
-      text : 'label.menu-hobbies'
+      text : 'label.menu-hobbies',
+      link : '/hobbies'
     },{
       icon : 'camera-retro',
-      text : 'label.menu-album'
+      text : 'label.menu-album',
+      link : '/album'
     }
   ];
 
@@ -56,4 +65,4 @@ var MainCtrl = function($rootScope, $scope, $timeout) {
 
 };
 
-angular.module('webcvApp').controller('MainCtrl', ['$rootScope', '$scope', '$timeout', MainCtrl]);
+angular.module('webcvApp').controller('MainCtrl', ['$rootScope', '$scope', '$timeout', 'i18nService', MainCtrl]);

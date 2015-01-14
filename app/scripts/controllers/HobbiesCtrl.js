@@ -8,8 +8,8 @@
  * Controller of the webcvApp
  */
 
-var HobbysCtrl = function($rootScope, $scope) {
+var HobbiesCtrl = function($rootScope, $scope) {
 
 };
 
-angular.module('webcvApp').controller('HobbysCtrl', ['$rootScope', '$scope', HobbysCtrl]);
+angular.module('webcvApp').controller('HobbiesCtrl', ['$rootScope', '$scope', HobbiesCtrl]);

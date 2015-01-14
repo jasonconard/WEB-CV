@@ -5,6 +5,11 @@
       <i class="fa fa-save"></i>
       <div>Curriculum Vitae</div>
     </div>
+    <div class="languages">
+      <div class="lang lang-en clickable" ng-click="selectLanguage('en')">En</div>
+      <div class="lang lang-fr clickable" ng-click="selectLanguage('fr')">Fr</div>
+      <div class="lang lang-zh clickable" ng-click="selectLanguage('zh')">中文</div>
+    </div>
   </div>
   <div class="header-name">Jason Conard
     <div class="header-social">
@@ -16,10 +21,12 @@
   </div>
 
   <div class="header-menu">
-    <div class="header-menu-item clickable" ng-repeat="item in menu">
-      <i class="fa fa-{{item.icon}}"></i>
-      <div>{{item.text | i18n}}</div>
-    </div>
+    <a href="#{{item.link}}" ng-repeat="item in menu">
+      <div class="header-menu-item clickable">
+        <i class="fa fa-{{item.icon}}"></i>
+        <div>{{item.text | i18n}}</div>
+      </div>
+    </a>
   </div>
 </div>
 

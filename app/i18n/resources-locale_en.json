@@ -1,3 +1,9 @@
 {
-  "label.menu-hobbies": "Test"
+  "label.menu-hobbies": "Hobbies",
+  "label.menu-profile": "Overview",
+  "label.menu-projects": "Projects",
+  "label.menu-skills": "Skills",
+  "label.menu-album": "Gallery",
+  "label.menu-professional": "Work Experience",
+  "label.menu-diplomas": "Diplomas"
 }
