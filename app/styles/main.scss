@@ -204,7 +204,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
       width: 100px;
       height: 100px;
       font-size: 14px;
-      margin: 0px 6px;
+      margin: 0px 5px;
       color: #ffffff;
       background-color: cadetblue;
       border-bottom: 2px solid #3c6c6e;
@@ -355,6 +355,8 @@ body {
   .header {
     .header-menu {
       width : 300px;
+      height: 115px;
+      margin-top: 30px;
       .header-menu-item {
         width: 50px;
         height: 50px;
@@ -383,6 +385,35 @@ body {
   .header {
     .header-menu {
       width : 240px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    .header-menu {
+      width : 240px;
+    }
+    .header-name {
+      margin-top: 30px;
+      margin-left: 5px;
+      font-size: 1.5em;
+      .header-social {
+        .header-social-button {
+          font-size: 0.75em;
+        }
+      }
+    }
+
+    .header-photo{
+      display: none;
+    }
+    .languages{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      margin: 0px;
+      padding: 0px;
     }
   }
 }
