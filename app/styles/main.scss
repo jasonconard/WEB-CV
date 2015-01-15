@@ -318,6 +318,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 body {
   background-image: url('../images/bruit.png');
+  font-family: '宋体',宋体b8b体,Microsoft YaHei, Arial, sans-serif;
 }
 
 .clickable:hover{
@@ -379,7 +380,6 @@ body {
     }
   }
 }
-
 
 @media (max-width: 700px) {
   .header {
