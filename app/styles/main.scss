@@ -227,6 +227,36 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
         @include transition();
       }
 
+      &::after{
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,1);
+        transform: scale(0,0);
+        transform-origin: 50% 50%;
+        opacity: 0;
+        border-radius: 50%;
+      }
+
+      &:active {
+        &::after{
+          transform: scale(1,1);
+          @include transition(transform 200ms step-start);
+        }
+      }
+
+      &:not(:active)::after {
+        -webkit-animation: scaleUp .4s ease-in-out;
+        -moz-animation: scaleUp .4s ease-in-out;
+        -ms-animation: scaleUp .4s ease-in-out;
+        -o-animation: scaleUp .4s ease-in-out;
+        animation: scaleUp .4s ease-in-out;
+        @include transition(transform 200ms step-end);
+      }
+
       div {
         position: absolute;
         width: 100%;
@@ -319,9 +349,58 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 
 #work-exp {
-  h3 {
-    padding : 5px;
-    @include box-shadow((0px -5px 5px -5px black, 0px 5px 5px -5px black));
+
+}
+
+h3 {
+  padding : 5px;
+  @include box-shadow((0px -5px 5px -5px black, 0px 5px 5px -5px black));
+}
+
+#projects {
+  position: relative;
+  display: flex;
+
+
+  .projects-container {
+    position: relative;
+    width: calc(190px * 4);
+    margin: auto;
+
+    .projects-item {
+      position: relative;
+      float: left;
+      margin: 20px;
+
+      width: 150px;
+      height: 250px;
+      background-color: #ffffff;
+
+      text-align: center;
+
+      @include box-shadow(0px 0px 2px rgba(0,0,0,0.5));
+      @include transition(all 200ms ease-in);
+
+      img {
+        position: relative;
+        margin: 15px;
+        width: 120px;
+        height: 120px;
+      }
+      .projects-title {
+        margin: 10px;
+      }
+      .projects-company {
+        margin: 10px;
+        font-size: 12px;
+      }
+
+      &:hover {
+
+        @include box-shadow(2px 2px 8px rgba(0,0,0,0.7));
+        @include transition(all 200ms ease-out);
+      }
+    }
   }
 }
 
@@ -425,4 +504,25 @@ body {
       padding: 0px;
     }
   }
+}
+
+@-webkit-keyframes scaleUp {
+  from { opacity: 0.6; transform: scale(0,0); }
+  to   { opacity: 0; transform: scale(1,1); }
+}
+@-moz-keyframes scaleUp {
+  from { opacity: 0.6; transform: scale(0,0); }
+  to   { opacity: 0; transform: scale(1,1); }
+}
+@-ms-keyframes scaleUp {
+  from { opacity: 0.6; transform: scale(0,0); }
+  to   { opacity: 0; transform: scale(1,1); }
+}
+@-o-keyframes scaleUp {
+  from { opacity: 0.6; transform: scale(0,0); }
+  to   { opacity: 0; transform: scale(1,1); }
+}
+@keyframes scaleUp {
+  from { opacity: 0.6; transform: scale(0,0); }
+  to   { opacity: 0; transform: scale(1,1); }
 }
