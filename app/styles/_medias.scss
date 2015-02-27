@@ -1,0 +1,92 @@
+//Under 1200px of width
+@media (max-width: 1200px) {
+  .header {
+    .header-menu {
+      .header-menu-item {
+        width: 70px;
+        height: 70px;
+        margin: 0px 6px;
+        i {
+          font-size: 2.5em;
+          top: 7px;
+        }
+        div {
+          font-size: 0.6em;
+          bottom: 4px;
+          white-space: normal;
+        }
+        &:hover {
+          i {
+            top: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    .header-menu {
+      width : 300px;
+      height: 115px;
+      margin-top: 30px;
+      .header-menu-item {
+        width: 50px;
+        height: 50px;
+        margin: 0px 6px 6px 0px;
+        i {
+          font-size: 1.5em;
+          top: 2px;
+        }
+        div {
+          font-size: 0.5em;
+          bottom: 1px;
+          white-space: normal;
+        }
+        &:hover {
+          i {
+            top: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    .header-menu {
+      width : 240px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    .header-menu {
+      width : 240px;
+    }
+    .header-name {
+      margin-top: 30px;
+      margin-left: 5px;
+      font-size: 1.5em;
+      .header-social {
+        .header-social-button {
+          font-size: 0.75em;
+        }
+      }
+    }
+
+    .header-photo{
+      display: none;
+    }
+    .languages{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
