@@ -1,1 +1,10 @@
 This is album page
+    {{overItem}}
+<div class="alex-band">
+  <div class="photo-group" ng-repeat="i in [1,2,3,4]" ng-mouseleave="setOverItem(4)">
+    <div class="photo-item photo-{{i}}"
+         ng-mouseenter="setOverItem(i)"
+         ng-class="{'slide-right': overItem < i}">
+    </div>
+  </div>
+</div>

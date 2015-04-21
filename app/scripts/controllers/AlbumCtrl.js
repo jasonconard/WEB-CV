@@ -9,7 +9,11 @@
  */
 
 var AlbumCtrl = function($rootScope, $scope) {
+  $scope.overItem = 4;
 
+  $scope.setOverItem = function(itemId) {
+    $scope.overItem = itemId;
+  }
 };
 
 angular.module('webcvApp').controller('AlbumCtrl', ['$rootScope', '$scope', AlbumCtrl]);

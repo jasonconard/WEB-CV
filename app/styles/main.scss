@@ -352,8 +352,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 }
 
-
-
 #projects {
   position: relative;
   display: flex;
@@ -401,6 +399,66 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   }
 }
 
+.alex-band {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  .photo-group {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    overflow: hidden;
+
+    .photo-item {
+      position: absolute;
+      width: calc(100% - 45px);
+      height: 100%;
+      left: 0px;
+      top: 0px;
+
+      @include box-shadow(-1px 0px 3px black);
+      @include transition(left 200ms ease-out);
+
+      &.photo-1 {
+        left: 0px;
+        background-color: #111111;
+        z-index: 1;
+      }
+      &.photo-2 {
+        left: 30px;
+        background-color: #222222;
+        z-index: 2;
+      }
+      &.photo-3 {
+        left: 60px;
+        background-color: #333333;
+        z-index: 3;
+      }
+      &.photo-4 {
+        left: 90px;
+        background-color: #444444;
+        z-index: 4;
+      }
+
+      &.slide-right {
+        &.photo-1 {
+          left: calc(100% - 120px);
+        }
+        &.photo-2 {
+          left: calc(100% - 90px);
+        }
+        &.photo-3 {
+          left: calc(100% - 60px);
+        }
+        &.photo-4 {
+          left: calc(100% - 30px);
+        }
+      }
+    }
+  }
+}
+
 
 /** UTILS **/
 .clickable:hover{
@@ -415,7 +473,7 @@ h3 {
 
 body {
    background-image: url('../images/bruit.png');
-   font-family: '宋体',宋体b8b体,Microsoft YaHei, Arial, sans-serif;
+   font-family: '宋体','宋体b8b体',Microsoft YaHei, Arial, sans-serif;
 }
 
 @import 'medias';

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var i18n = angular.module('i18n');
 
