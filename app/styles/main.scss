@@ -18,6 +18,22 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   transition: $what;
 }
 
+$primary-back-color-1 : #FFFFFF;
+$primary-back-color-2 : #FFFFFF;
+$primary-back-color-3 : #FFFFFF;
+
+$primary-shad-color: #FFFFFF;
+$primary-font-color: #FFFFFF;
+
+$secondary-back-color-1 : #FFFFFF;
+$secondary-back-color-2 : #FFFFFF;
+$secondary-back-color-3 : #FFFFFF;
+
+$secondary-shad-color: #FFFFFF;
+$secondary-font-color: #FFFFFF;
+
+
+
 
 .header {
   position: relative;
@@ -342,6 +358,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   min-height: 50px;
   background-color: #ffeace;
   padding: 30px 20px;
+  overflow: hidden;
 
   @include box-shadow(inset 0px 0px 20px #83776c, 0px 0px 20px 5px black);
   @include transition(height 300ms ease-in);

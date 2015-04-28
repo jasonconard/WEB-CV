@@ -66,3 +66,33 @@ app.run(['$rootScope', '$http', '$window', 'i18nService', function($rootScope, $
   i18nService.selectLanguage('en');
 
 }]);
+
+app.directive('checkHeight', function($timeout) {
+  return {
+    restrict: 'A',
+    transclude: true,
+    template: "<div ng-transclude></div>",
+    link: function(scope, element) {
+
+      var computeHeight = function() {
+        var children = angular.element(element.children()).toArray();
+
+        var top = +element.css('padding-top').replace(/[^0-9]+/ig,"");
+        var bot = +element.css('padding-bottom').replace(/[^0-9]+/ig,"");
+
+        return top + bot + children.reduce( function(prev, now) {
+          return prev + now.scrollHeight;
+        }, 0);
+      };
+
+      var changeHeight = function() {
+        $timeout (function(){
+          var height = computeHeight();
+          element.css('height', height+'px');
+        }, 5);
+      };
+
+      scope.$watch(computeHeight, changeHeight);
+    }
+  }
+});
