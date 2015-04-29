@@ -27,7 +27,15 @@ $primary-font-color: #443420;
 $secondary-back-color-1 : #0e5f21;
 $secondary-back-color-3 : #116e27;
 $secondary-shad-color: #0a4818;
-$secondary-font-color: #d5e495;
+$secondary-font-color: #edf1dd;
+
+a {
+  font-weight: bold;
+  color: $secondary-shad-color;
+  &:hover {
+    color: $secondary-back-color-1;
+  }
+}
 
 .header {
   position: relative;
