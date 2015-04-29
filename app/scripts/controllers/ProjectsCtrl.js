@@ -10,6 +10,8 @@
 
 var ProjectsCtrl = function($rootScope, $scope) {
 
+    $scope.selectedProject = -1;
+
     $scope.projects = [
         { title : 'OpenStreetMap.fr', year : 2015, company : 'EBusiness Information', details: 'Refonte du site d\'OpenStreetMap.fr.', pic: 'images/project/osmfr.png'},
         { title : 'Gatling', year : 2015, company : 'EBusiness Information', details: 'Refonte du design du site Gatling.io.', pic: 'images/project/gatling.png', css:'width-pic'},
@@ -18,6 +20,15 @@ var ProjectsCtrl = function($rootScope, $scope) {
         { title : 'DesignMyApp', year : 2014, company : 'EBusiness Information', details: 'Site permettant de générer et télécharger une app custom en quelques clics.', pic: 'images/project/dma.png'},
         { title : '3D Stéréoscopique', year : 2013, company : 'Université du Havre', details: 'Projet de réalité augmentée sous OpenGL.', pic: 'images/project/3dstereo.png'}
     ];
+
+    $scope.toggleProject = function(index){
+        if(index === $scope.selectedProject){
+            $scope.selectedProject = -1;
+        } else {
+            $scope.selectedProject = index;
+        }
+
+    }
 
 };
 

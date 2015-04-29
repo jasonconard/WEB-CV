@@ -1,11 +1,16 @@
 <div id="projects">
   <div class="projects-container">
-    <div class="projects-item clickable" ng-repeat="project in projects">
-      <div class="img-container">
-        <img ng-src="{{project.pic}}" ng-class="project.css">
+    <div class="projects-content">
+      <div class="projects-item clickable" ng-repeat="project in projects"
+           ng-click="toggleProject($index)">
+        <div class="project-item-container">
+          <div class="img-container">
+            <img ng-src="{{project.pic}}" ng-class="project.css">
+          </div>
+          <div class="projects-title">{{project.year}} <br/> {{project.title}}</div>
+          <div class="projects-company">{{project.company}}</div>
+        </div>
       </div>
-      <div class="projects-title">{{project.year}} <br/> {{project.title}}</div>
-      <div class="projects-company">{{project.company}}</div>
     </div>
   </div>
 </div>
