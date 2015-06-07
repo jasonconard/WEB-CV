@@ -1,16 +1,36 @@
-<div id="projects">
-  <div class="projects-container">
+<div class="container-title projects">
+  <span>{{'label.menu-projects' | i18n}}</span>
+</div>
+<div class="content">
+  <div class="projects-info" ng-if="selectedProject >= 0" check-height>
+    <div class="info">
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus nibh dapibus, tempus diam non, molestie nibh. Morbi a purus ultrices, accumsan tortor vitae, aliquet enim. Ut vel elit iaculis, facilisis odio in, auctor eros. Phasellus consectetur, diam et vestibulum lobortis, sapien ex pulvinar magna, dignissim hendrerit nisi lacus nec felis. Maecenas commodo consectetur lobortis. Nulla ac mattis augue. Quisque sit amet feugiat odio. Vivamus sed eros libero. Mauris feugiat urna ut nibh mattis, eu lobortis turpis aliquam. Quisque vitae ex faucibus, feugiat massa nec, elementum eros. Integer consectetur gravida nisi ut placerat. Aenean eget orci et mi viverra cursus. Ut dolor dolor, ultrices nec placerat eget, sodales ut neque. Sed ultricies risus ante, nec eleifend tellus mollis a.<br/><br/>
+
+Aenean luctus lacinia erat, fringilla vulputate velit consectetur ornare. Integer pulvinar tortor sit amet lectus cursus, vitae blandit ex finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque porta nisi nec urna posuere, vitae eleifend eros rhoncus. Cras imperdiet dapibus massa vitae aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas consequat, arcu sit amet placerat tristique, risus arcu dignissim lacus, non dapibus metus felis in nulla. Nullam ante sapien, venenatis quis urna sed, venenatis sollicitudin nisi. Mauris volutpat nibh leo, at porta massa egestas a. Fusce eu rutrum diam, vel cursus purus. Nullam scelerisque vehicula lacus. Duis a metus at urna lacinia pellentesque sed sit amet ex. Maecenas pretium, velit vitae hendrerit elementum, lacus sapien congue justo, et aliquam eros ante non magna. Suspendisse vehicula lacus lacus, id egestas velit laoreet at.<br/><br/>
+
+Vestibulum enim dui, ultrices sed egestas at, faucibus sit amet ligula. In varius urna sit amet dictum auctor. Mauris vitae vestibulum libero. Nullam nec pretium tellus, in commodo urna. Integer viverra nibh in orci mattis cursus. Donec tempor ornare cursus. Nulla ac quam ut libero viverra dapibus. Cras a magna eu enim feugiat ullamcorper. Sed sollicitudin auctor diam, vel tempor tellus convallis eget. Donec ultricies lacus diam, vehicula rhoncus felis pharetra vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lobortis eros, sit amet auctor nibh. Nulla condimentum eleifend lacus non laoreet.<br/><br/>
+
+In dictum tristique sapien, ut faucibus diam. Donec vehicula ex in facilisis euismod. Phasellus finibus congue varius. Nam placerat vehicula magna, eget vulputate leo laoreet eget. Pellentesque sit amet malesuada dui. Nunc tellus sem, laoreet ut turpis in, euismod tincidunt turpis. Donec eleifend et urna sed congue. Aliquam pretium tellus eget tempus ullamcorper. Cras placerat varius sem nec blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam sodales maximus nibh. Integer lorem velit, aliquet ut neque non, suscipit gravida enim. Mauris egestas cursus malesuada.<br/><br/>
+
+Quisque fringilla vulputate commodo. Morbi in justo a massa sagittis sagittis. Maecenas vehicula velit in imperdiet lacinia. Praesent quis euismod nisl, eget ornare velit. Aenean iaculis velit nulla, at sodales odio convallis non. Donec non risus quis lorem accumsan consequat sit amet congue justo. Nunc porttitor euismod nulla, et ultricies mauris rhoncus et. Duis felis ligula, efficitur at vehicula id, aliquam quis odio. Maecenas interdum, leo vel accumsan placerat, mi dui cursus urna, lobortis cursus velit odio eget sem. Phasellus in convallis diam.<br/><br/>
+      </span>
+    </div>
+
+  </div>
+  <div class="projects-container instant-destroy" ng-if="selectedProject < 0">
     <div class="projects-content">
+      
       <div class="projects-item clickable" ng-repeat="project in projects"
            ng-click="toggleProject($index)">
         <div class="project-item-container">
           <div class="img-container">
-            <img ng-src="{{project.pic}}" ng-class="project.css">
+            <img ng-src="{{project.pic}}">
           </div>
           <div class="projects-title">{{project.year}} <br/> {{project.title}}</div>
-          <div class="projects-company">{{project.company}}</div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

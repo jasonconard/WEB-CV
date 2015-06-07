@@ -57,24 +57,39 @@
     <![endif]-->
 
 
-    <div ng-include="'/views/header.html'"></div>
+    
 
-    <div class="header-navigator container" ng-class="{'closed-panel' : !switchCanvas}">
-      <div class="header-switch clickable" ng-click="switchCanvas = !switchCanvas">
-    <span ng-if="switchCanvas">
-      <i class="fa fa-chevron-up"></i><strong> Fermer la navigation Canvas </strong><i class="fa fa-chevron-up"></i>
-    </span>
-    <span ng-if="!switchCanvas">
-      <i class="fa fa-chevron-down"></i><strong> Ouvrir la navigation Canvas </strong><i class="fa fa-chevron-down"></i>
-    </span>
-      </div>
-      <div class="header-canvas">
-        <canvas id="header-canvas" ng-class="{'closed-panel' : !switchCanvas}"></canvas>
-      </div>
+    <!--<div class="header-navigator container" ng-class="{'closed-panel' : !switchCanvas}">-->
+      <!--<div class="header-switch clickable" ng-click="switchCanvas = !switchCanvas">-->
+    <!--<span ng-if="switchCanvas">-->
+      <!--<i class="fa fa-chevron-up"></i><strong> Fermer la navigation Canvas </strong><i class="fa fa-chevron-up"></i>-->
+    <!--</span>-->
+    <!--<span ng-if="!switchCanvas">-->
+      <!--<i class="fa fa-chevron-down"></i><strong> Ouvrir la navigation Canvas </strong><i class="fa fa-chevron-down"></i>-->
+    <!--</span>-->
+      <!--</div>-->
+      <!--<div class="header-canvas">-->
+        <!--<canvas id="header-canvas" ng-class="{'closed-panel' : !switchCanvas}"></canvas>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="main-container container" check-height>-->
+      <!--<div ng-view></div>-->
+    <!--</div>-->
+
+    <div class="background">
+      <div class="left-dots"></div>
+      <div class="right-dots"></div>
     </div>
 
-    <div class="main-container container" check-height>
-      <div ng-view></div>
+    <div class="body-content">
+
+      <div ng-include="'/views/header.html'"></div>
+
+      <div class="container" check-height>
+        <div ng-view></div>
+      </div>
+
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

@@ -1,4 +1,4 @@
-<div class="header container">
+<!--<div class="header container">
   <div class="header-photo">
     <img src="images/myhead.jpg">
     <div class="header-cv clickable">
@@ -30,4 +30,24 @@
       </div>
     </a>
   </div>
+</div>-->
+
+
+<div class="header">
+  <div class="squares"></div>
+  <div class="header-photo"></div>
+  <div class="header-name">
+    <span class="name">Jason Conard</span>
+    <br/><span class="job">Consultant chez EBusiness Information</span>
+  </div>
+  <div class="header-container">
+    <div class="header-buttons">
+      <div ng-repeat="menu in menus" ng-click="goToLocalLocation(menu.link)" class="header-button clickable" ng-class="menu.icon">
+        <div class="header-button-back">
+          <span>{{menu.text |i18n}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

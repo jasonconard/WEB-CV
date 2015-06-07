@@ -8,65 +8,51 @@
  * Controller of the webcvApp
  */
 
-var MainCtrl = function($rootScope, $scope, $timeout, i18nService) {
-  $scope.switchCanvas = true;
-
-  $scope.currentLanguage = i18nService.i18n.language;
-  $scope.selectLanguage = function(lang){
-    i18nService.selectLanguage(lang);
-    $scope.currentLanguage = lang;
-  };
-
-  $scope.menu = [
+var MainCtrl = function($rootScope, $scope, $timeout, i18nService, $location) {
+  //$scope.switchCanvas = true;
+  //
+  //$scope.currentLanguage = i18nService.i18n.language;
+  //$scope.selectLanguage = function(lang){
+  //  i18nService.selectLanguage(lang);
+  //  $scope.currentLanguage = lang;
+  //};
+  //
+  $scope.menus = [
     {
       icon : 'user',
       text : 'label.menu-profile',
-      link : '/profile'
+      link : 'profile'
     },{
       icon : 'coffee',
       text : 'label.menu-professional',
-      link : '/work'
+      link : 'work'
     },{
       icon : 'graduation-cap',
       text : 'label.menu-diplomas',
-      link : '/diplomas'
+      link : 'diplomas'
     },{
       icon : 'gears',
       text : 'label.menu-projects',
-      link : '/projects'
+      link : 'projects'
     },{
       icon : 'wrench',
       text : 'label.menu-skills',
-      link : '/skills'
+      link : 'skills'
     },{
       icon : 'gamepad',
       text : 'label.menu-hobbies',
-      link : '/hobbies'
+      link : 'hobbies'
     },{
       icon : 'camera-retro',
       text : 'label.menu-album',
-      link : '/album'
+      link : 'album'
     }
   ];
 
-  $timeout(function() {
 
-    var canvasObject = $('#header-canvas')[0];
-    var canvasCurrentWidth = canvasObject.clientWidth;
-    var ctx = canvasObject.getContext("2d");
-
-
-    ctx.beginPath();
-    ctx.moveTo(0,0);
-    ctx.lineTo(0,canvasCurrentWidth);
-    ctx.lineTo(1000,canvasCurrentWidth);
-    ctx.lineTo(1000,0);
-    ctx.closePath();
-    ctx.fillStyle = "lightblue";
-    ctx.fill();
-
-  },100);
-
+  $scope.goToLocalLocation = function(location) {
+    $location.path(location);
+  }
 };
 
-angular.module('webcvApp').controller('MainCtrl', ['$rootScope', '$scope', '$timeout', 'i18nService', MainCtrl]);
+angular.module('webcvApp').controller('MainCtrl', ['$rootScope', '$scope', '$timeout', 'i18nService', '$location', MainCtrl]);

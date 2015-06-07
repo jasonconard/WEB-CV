@@ -67,6 +67,30 @@ app.run(['$rootScope', '$http', '$window', 'i18nService', function($rootScope, $
 
 }]);
 
+/*
+ Copyright © 2015 by eBusiness Information
+ All rights reserved. This source code or any portion thereof
+ may not be reproduced or used in any manner whatsoever
+ without the express written permission of eBusiness Information.
+ */
+/**
+ * Created by Jason Conard on 27/04/15.
+ * What is it?
+ * A directive which permits to have a smooth animation with css height.
+ * It computes the height thanks to his content.
+ *
+ * How to use?
+ * you need a first div with :
+ * <div class="check-height" check-height>...</div>
+ *
+ * A CSS class which contains :
+ * .check-height { transition: height 200ms ease-out; overflow: hidden; }
+ *
+ * And then the content of the div can be variable, imagine an open/close.
+ * <div class"check-height" check-height>
+ *   <div ng-if="contentOpen"> Some content ... </div>
+ * </div>
+ */
 app.directive('checkHeight', function($timeout) {
   return {
     restrict: 'A',
@@ -77,10 +101,7 @@ app.directive('checkHeight', function($timeout) {
       var computeHeight = function() {
         var children = angular.element(element.children()).toArray();
 
-        var top = +element.css('padding-top').replace(/[^0-9]+/ig,"");
-        var bot = +element.css('padding-bottom').replace(/[^0-9]+/ig,"");
-
-        return top + bot + children.reduce( function(prev, now) {
+        return children.reduce( function(prev, now) {
           return prev + now.scrollHeight;
         }, 0);
       };
@@ -91,6 +112,15 @@ app.directive('checkHeight', function($timeout) {
           element.css('height', height+'px');
         }, 5);
       };
+
+      var refresh = function(){
+        $timeout(function() {
+          refresh();
+        },25);
+      };
+      refresh();
+
+
 
       scope.$watch(computeHeight, changeHeight);
     }
